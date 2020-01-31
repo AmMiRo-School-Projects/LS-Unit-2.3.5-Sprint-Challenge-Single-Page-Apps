@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SearchForm from "./SearchForm";
-import CharacterCard from "./CharacterCard";
+import EpisodeCard from "./EpisodeCard";
 import styled from "styled-components";
 
-const Charactersdiv = styled.div`
+const EpisodesDiv = styled.div`
 display:flex;
 flex-wrap: wrap;
 justify-content; center;
@@ -12,7 +12,7 @@ align-items: center;
 width: 100%;
 `;
 
-const CharactersSection = styled.section`
+const EpisodesSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space around;
@@ -27,13 +27,13 @@ export default function CharacterList() {
 
   useEffect(() => {
     axios
-      .get("https://rickandmortyapi.com/api/character/")
+      .get("https://rickandmortyapi.com/api/episode/")
       .then(response => {
         console.log(response);
-        const characters = response.data.results.filter(obj =>
+        const episodes = response.data.results.filter(obj =>
           obj.name.toLowerCase().includes(query.toLowerCase())
         );
-        setData(characters);
+        setData(episodes);
       })
       .catch(err => {
         console.log("get error:", err);
@@ -41,13 +41,13 @@ export default function CharacterList() {
   }, [query]);
 
   return (
-    <CharactersSection className="character-list">
+    <EpisodesSection className="character-list">
       <SearchForm query={query} setQuery={setQuery} />
-      <Charactersdiv>
+      <EpisodesDiv>
         {data.map(obj => {
-          return <CharacterCard obj={obj} key={obj.name} />;
+          return <EpisodeCard obj={obj} key={obj.name} />;
         })}
-      </Charactersdiv>
-    </CharactersSection>
+      </EpisodesDiv>
+    </EpisodesSection>
   );
 }

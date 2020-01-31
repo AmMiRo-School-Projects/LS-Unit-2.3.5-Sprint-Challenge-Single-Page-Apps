@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const SearchSection = styled.section`
@@ -19,7 +19,7 @@ export default function SearchForm(props) {
           onChange={handleInputChange}
           value={props.query}
           name="name"
-          placeholder="search by name"
+          placeholder="search"
           autoComplete="off"
         />
       </form>

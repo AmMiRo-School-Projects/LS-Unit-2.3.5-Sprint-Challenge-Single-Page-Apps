@@ -4,6 +4,7 @@ import Header from "./components/Header.js";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import LocationsList from "./components/LocationsList";
+import EpisodeList from "./components/EpisodeList";
 import styled from "styled-components";
 
 const AppMain = styled.main`
@@ -22,6 +23,9 @@ export default function App() {
       </Route>
       <Route path="/locations">
         <LocationsList />
+      </Route>
+      <Route path="/episodes">
+        <EpisodeList />
       </Route>
     </AppMain>
   );

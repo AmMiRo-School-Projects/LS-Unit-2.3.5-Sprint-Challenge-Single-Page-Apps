@@ -43,7 +43,7 @@ export default function LocationsList() {
       <SearchForm query={query} setQuery={setQuery} />
       <Locationsdiv>
         {data.map(obj => {
-          return <LocationCard obj={obj} />;
+          return <LocationCard obj={obj} key={obj.name} />;
         })}
       </Locationsdiv>
     </LocationsSection>

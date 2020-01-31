@@ -30,6 +30,9 @@ export default function Header() {
         <Link className="nav-link" to="/locations">
           Locations
         </Link>
+        <Link className="nav-link" to="/episodes">
+          Episodes
+        </Link>
       </MainNav>
     </MainHeader>
   );
