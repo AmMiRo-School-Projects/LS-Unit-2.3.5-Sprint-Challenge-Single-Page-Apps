@@ -9,16 +9,12 @@ const CardDiv = styled.div`
   width: 330px;
 `;
 
-const CardImg = styled.img`
-  max-width: 100%;
-`;
-
-export default function CharacterCard(props) {
+export default function EpisodeCard(props) {
   return (
     <CardDiv>
       <h2>{props.obj.name}</h2>
-      <CardImg src={props.obj.image} alt={props.obj.name} />
-      <p>Species: {props.obj.species}</p>
+      <p>Episode: {props.obj.episode}</p>
+      <p>First Aired: {props.obj.air_date}</p>
     </CardDiv>
   );
 }

@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from "styled-components";
 
-export default function SearchForm() {
- 
+const SearchSection = styled.section`
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 5px 3px rgba(0, 0, 0, 0.22);
+  margin: 2%;
+`;
+
+export default function SearchForm(props) {
+  const handleInputChange = e => {
+    props.setQuery(e.target.value);
+  };
+
   return (
-    <section className="search-form">
-     // Add a search form here
-    </section>
+    <SearchSection className="search-form">
+      <form>
+        <input
+          type="text"
+          onChange={handleInputChange}
+          value={props.query}
+          name="name"
+          placeholder="search"
+          autoComplete="off"
+        />
+      </form>
+    </SearchSection>
   );
 }
